@@ -43,4 +43,4 @@ RUN chmod +x ./xvfb.sh
 
 ENTRYPOINT ["/usr/bin/tini", "--", "/bin/bash", "/app/xvfb.sh"]
 
-CMD ["sh", "-c", "python -m src.job.monitoring"]
+CMD ["sh", "-c", "python -m src/job/monitoring.py"]
