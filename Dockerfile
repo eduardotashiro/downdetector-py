@@ -43,4 +43,4 @@ RUN chmod +x ./xvfb.sh
 
 ENTRYPOINT ["/usr/bin/tini", "--", "/bin/bash", "/app/xvfb.sh"]
 
-CMD ["sh", "-c", "make run"]
+CMD ["sh", "-c", "make dockerrun"]
