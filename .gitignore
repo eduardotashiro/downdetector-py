@@ -1,0 +1,11 @@
+.env
+__pycache__/
+.venv/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.log
+debug_*.png__pycache__/
+src/slack/__pycache__/types.cpython-314.pyc
+src/slack/__pycache__/incident_monitor.cpython-314.pyc

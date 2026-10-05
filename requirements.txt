@@ -1,0 +1,2 @@
+camoufox[geoip]>=0.5.0
+schedule>=1.2.0
