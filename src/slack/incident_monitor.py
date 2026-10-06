@@ -18,9 +18,9 @@ class IncidentMonitor:
         url = service['url']
         status = service['outage']
         
-        service_name = name.value if hasattr(name, 'value') else name
-        service_url = url.value if hasattr(url, 'value') else url
-        
+        service_name = name.value
+        service_url = url.value
+
         message_formatter = MessageFormatter(service_name=service_name,status=status,service_url=service_url)
 
         if status == ServiceStatus.DANGER and not self.incident:
