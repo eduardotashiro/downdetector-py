@@ -1,6 +1,5 @@
 import time
 import random
-import sys
 
 from ..slack.notification_orchestrator import check_all
 
@@ -16,14 +15,11 @@ def start_scheduler():
     cont = 0
     run()
     
-    while cont < 4:
+    while True:
         # Aleatório entre 60s e 180s
         delay = random.randint(60, 180)
         print(f"Próxima verificação em {delay//60} minutos...")
         time.sleep(delay)
         run()
-        cont += 1 
-    sys.exit(1)
 
 start_scheduler()
-# SystemExit()
