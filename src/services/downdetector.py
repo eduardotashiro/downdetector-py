@@ -31,10 +31,10 @@ def wait_for_real_content(page, service_name: str, max_wait: int = 15) -> bool:
         except:
             body = ""
         
-        if any(x in body for x in ["relatos dos usuários", "relatar um problema", "user reports show", "report a problem"]):
+        if any(x in body for x in ["relatos dos usuários", "relatos de usuáriosa"]):
             return True
         
-        if any(x in body for x in ["verificando", "verifying", "segurança", "confirme que é humano"]):
+        if any(x in body for x in ["verificando", "segurança", "confirme que é humano"]):
             time.sleep(2)
             continue
         
@@ -58,20 +58,16 @@ def detect_status(page) -> Optional[str]:
         return None
 
 def check_single_service(browser, service: Dict) -> Optional[str]:
-    """Verifica um único serviço."""
-    name = service['name'].value if hasattr(service['name'], 'value') else service['name']
-    url = service['url'].value if hasattr(service['url'], 'value') else service['url']
+    name = service['name'].value 
+    url = service['url'].value
     
     page = None
     try:
         print(f"{name}...", end="", flush=True)
         
         page = browser.new_page()
-        page.set_extra_http_headers({
-            "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7",
-        })
-        
-        page.goto(url, wait_until="domcontentloaded", timeout=45000)
+        page.set_extra_http_headers({ "Accept-Language": "pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7"})
+        page.goto(url, wait_until="domcontentloaded")
         
         if wait_for_real_content(page, name, max_wait=15):
             status = detect_status(page)
@@ -114,7 +110,7 @@ def check_all_services() -> List[Dict]:
     ) as browser:
         
         for i, service in enumerate(services_to_check):
-            name = service['name'].value if hasattr(service['name'], 'value') else service['name']
+            name = service['name'].value 
             
             status = check_single_service(browser, service)
             
