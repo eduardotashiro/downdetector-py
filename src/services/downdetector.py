@@ -14,7 +14,7 @@ SERVICES = [
     {"name": ServiceName.BRADESCO, "url": ServiceURL.BRADESCO},
     {"name": ServiceName.BANCO_DO_BRASIL, "url": ServiceURL.BANCO_DO_BRASIL},
     {"name": ServiceName.MERCADO_PAGO, "url": ServiceURL.MERCADO_PAGO},
-    {"name": ServiceName.GOOGLE, "url": ServiceURL.GOOGLE}
+    {"name": ServiceName.CIELO, "url": ServiceURL.CIELO}
 ]
 
 # def force_close_browser(browser):

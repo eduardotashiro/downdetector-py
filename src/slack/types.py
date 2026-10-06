@@ -15,7 +15,7 @@ class ServiceName(str, Enum):
     ITAU = "Banco Itaú"
     NUBANK = "Nubank"
     MERCADO_PAGO = "Mercado Pago"
-    GOOGLE = "Google"
+    CIELO = "Cielo"
 
 class ServiceURL(str, Enum):
     BANCO_DO_BRASIL = "https://downdetector.com.br/fora-do-ar/banco-do-brasil/"
@@ -26,7 +26,7 @@ class ServiceURL(str, Enum):
     ITAU = "https://downdetector.com.br/fora-do-ar/banco-itau/"
     NUBANK = "https://downdetector.com.br/fora-do-ar/nubank/"
     MERCADO_PAGO = "https://downdetector.com.br/fora-do-ar/mercadopago/"
-    GOOGLE = "https://downdetector.com.br/fora-do-ar/google/"
+    CIELO = "https://downdetector.com.br/fora-do-ar/cielo/"
 
 class StatusMap(str, Enum):
     success = ServiceStatus.SUCCESS
