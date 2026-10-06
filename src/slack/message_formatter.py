@@ -17,7 +17,7 @@ class MessageFormatter:
                 f":alert: *Nível Crítico - {self.service_name}*\n\n"
                 f"• *Status:* `critic`\n"
                 f"• *Detectado em:* {datetime.now(BRASIL_TZ).strftime('%d/%m/%Y às %H:%M:%S')}\n\n"
-                f"<{self.service_url}|Ver no Downdetector>"
+                f"<{self.service_url} | Ver no Downdetector>"
             }
 
     def format_alert_resolved(self,incident_start,end_incident,time_text):
@@ -27,5 +27,5 @@ class MessageFormatter:
             f"• *Detectado em:* {incident_start}\n"
             f"• *Fim:* {end_incident}\n"
             f"• *Duração:* {time_text}\n\n"
-            f"<{self.service_url}|Ver no Downdetector>"
+            f"<{self.service_url} | Ver no Downdetector>"
         }      
